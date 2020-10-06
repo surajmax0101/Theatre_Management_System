@@ -172,7 +172,86 @@ void TBS :: bar(void)                       // bar() open
 
 void TBS :: menumaker(char a[][20],int z )
 {
-	
+	char i= ' ';
+	  int  l = 0, m = 0, p;
+
+	 menu_01:  clrscr();
+				  bar();
+
+				  _setcursortype(_NOCURSOR);
+
+				  cout<< "\n\n\t\t\t";
+				  textcolor(BROWN);  cprintf("%c",(char)201); 		//Line 1
+				  for( p = 0 ; p< 31 ; p++)   cprintf("%c",(char)223);
+														cprintf("%c",(char)187);
+
+
+				  cout<< "\n\t\t\t"; cprintf("%c",179);
+				  textcolor(GREEN);  cprintf("              MENU             ");
+				  textcolor(BROWN);  cprintf("%c",179);
+
+				  cout<< "\n\t\t\t"; cprintf("%c",200);
+				  cprintf("_______________________________");
+				  cprintf("%c",188);
+				  cout<< "\n\t\t\t"; cprintf("%c",186);
+				  cprintf("                               ");
+				  cprintf("%c",186);
+
+					switch(i)                  //Decision making for menu
+					{
+						 case 'w':
+						 case 'W': pos--;
+										break;
+
+						 case 's':
+						 case 'S': pos++;
+										break;
+
+					 }
+
+					 if(pos > (z-1))  pos = 0;
+					 if(pos < 0)  pos = (z-1);
+
+					 for(l = 0; l < z ; l++)
+					 {
+							cout<<"\n\t\t\t";
+
+						 if(l != pos)
+						 {
+						  cprintf("%c",186);
+						  cout<<"      ";
+						  for(m = 0; m < 20; m++)
+						  {
+							textcolor(YELLOW);        cprintf("%c",a[l][m]);
+						  }
+						 }
+
+						 else
+						 {
+						  cprintf("%c",186);
+						  textcolor(RED);   cprintf("     ");
+						  textbackground(WHITE);
+							for(m = 0; m < 20; m++)			cprintf("%c",a[l][m]);
+							textbackground(BLACK);
+						 }
+
+						 cout<< '\t';   textcolor(BROWN); cprintf("�");
+
+					 }
+
+					 cout<<"\n\t\t\t";
+					 cprintf("�������������������������������ļ");
+
+
+					 cout<<"\n\n\n\n\n\n\n\n\t\t";
+										cprintf("_______________________________________________");
+					 cout<<"\n\t\t"; cprintf("|   W = Up   |   S = Down  |   Enter = Select |");
+					  i = getch();
+					 if(i == (char)13) 	goto exit;
+
+	 goto menu_01;
+
+	 exit :
 }
 
 //---------------------------------------------------------------------------
