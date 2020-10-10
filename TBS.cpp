@@ -161,10 +161,59 @@ void TBS :: intro_screen(void)
 //=========================================================================//
 void TBS :: welmenu()
 {
-	
+		int i = 0;
+	introscreen_02 :
+
+	  clrscr();
+	  _setcursortype(_NOCURSOR);				  // Hiding cursor
+	  textcolor(GREEN);
+	  cout<< "\n\n\n\t\t"; cprintf("The AllTime Cinemas wishes ");
+	  cout<< "\n\t\t\t";   cprintf(" All its guests a warm");
+
+														  // Rotating rod
+
+	  cout<<"\n\n\n\t\t\t\t";
+	  textcolor(BLUE);      cprintf("/ WELCOME /");	  delay(10);   //Phase 1
+
+	  cout<<"\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b";
+	  textcolor(MAGENTA);   cprintf("- WELCOME -");	  delay(10);   //Phase 2
+
+	  cout<<"\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b";
+	  textcolor(BROWN);     cprintf("\\ WELCOME \\"); delay(10);   //Phase 3
+
+	  cout<<"\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b";
+	  textcolor(CYAN);      cprintf("| WELCOME |");   delay(10);   //Phase 4
+
+	  cout<<"\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b\b \b";
+	  textcolor(YELLOW);    cprintf("- WELCOME -");   delay(10);     //Phase 5
+
+	  i++;                                   // Iteration Counter
+		 if(i==50);
+		 else       goto introscreen_02;
 }
 void TBS :: bar(void)                       // bar() open
 {
+	int i;
+
+	 cout<< "\n\t";                          // Line 1
+	 textcolor(LIGHTBLUE);
+	 cprintf("%c",(char)201);
+	  for(i = 0; i <= 62 ; i++)  cprintf("%c", (char)177);
+	  cprintf("%c",(char)187);
+
+	 cout<< "\n\t";                          // Line 2
+	 textcolor(LIGHTBLUE);
+	  cprintf("%c",(char)178);   textcolor(MAGENTA);
+	  textbackground(WHITE);
+	 cprintf("                    THEATRE MANAGEMENT SYSTEM                  ");
+	  textbackground(BLACK);
+	 textcolor(LIGHTBLUE);       cprintf("%c",(char)178);
+
+	 cout<< "\n\t";                          // Line 3
+	 textcolor(LIGHTBLUE);
+	 cprintf("%c",(char)200);
+	 for(i = 0; i <= 62 ; i++)  cprintf("%c", (char)177);
+	 cprintf("%c",(char)188);
 	 
 }                                           // bar() close
 
